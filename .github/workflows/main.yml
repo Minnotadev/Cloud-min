@@ -38,7 +38,8 @@ jobs:
               Number  = [char[]](48..57)      # 0-9
           }
           $password = "G@m!ng0983"
-          New-LocalUser -Name "Mincobat" -Password $password -AccountNeverExpires
+          $securePass = ConvertTo-SecureString $password -AsPlainText -Force
+          New-LocalUser -Name "Mincobat" -Password $securePass -AccountNeverExpires
           Add-LocalGroupMember -Group "Administrators" -Member "Mincobat"
           Add-LocalGroupMember -Group "Remote Desktop Users" -Member "Mincobat"
           
