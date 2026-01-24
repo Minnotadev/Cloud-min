@@ -52,7 +52,7 @@ jobs:
 
       - name: Install Tailscale
         run: |
-          $tsUrl = "https://dl.tailscale.com/stable/tailscale-setup-1.92.5.exe"
+          $tsUrl = "https://dl.tailscale.com/stable/tailscale-setup-1.92.5-amd64.msi"
           $installerPath = "$env:TEMP\tailscale.msi"
           
           Invoke-WebRequest -Uri $tsUrl -OutFile $installerPath
